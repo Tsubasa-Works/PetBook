@@ -1,0 +1,43 @@
+﻿<Page x:Class="PetBook.nav.AboutPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+     xmlns:ui="http://schemas.modernwpf.com/2019"
+     xmlns:local="clr-namespace:PetBook"
+      Height="600" Width="800">
+    <ui:SimpleStackPanel Spacing="10" Margin="20">
+        <TextBlock  FontSize="20" Text="本项目使用了以下开源项目" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"  />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="90" />
+                <ColumnDefinition Width="90" />
+            </Grid.ColumnDefinitions>
+            <ui:HyperlinkButton Grid.Column="0" Content="tokio" NavigateUri="https://tokio.rs" Cursor="Hand" />
+            <ui:HyperlinkButton Grid.Column="1" Content="reqwest" NavigateUri="https://github.com/seanmonstar/reqwest" />
+            <ui:HyperlinkButton Grid.Column="2" Content="futures" NavigateUri="https://github.com/rust-lang/futures-rs" />
+            <ui:HyperlinkButton Grid.Column="3" Content="rusqlite" NavigateUri="https://github.com/maciejhirsz/json-rust" />
+            <ui:HyperlinkButton Grid.Column="4" Content="json" NavigateUri="https://github.com/maciejhirsz/json-rust" Cursor="Hand" />
+            <ui:HyperlinkButton Grid.Column="5" Content="ModernWpf" NavigateUri="https://github.com/Kinnara/ModernWpf" />
+        </Grid>
+
+        <TextBlock Grid.Column="0" FontSize="20" Text="本项目开源代码遵从MIT许可" Margin="0,2,0,-2" />
+        <ui:HyperlinkButton FontSize="15" Grid.Column="1" Content="Github仓库" NavigateUri="https://github.com/Tsubasa-Works/PetBook" Margin="4,-1,0,0" Cursor="Hand" VerticalAlignment="Top" />
+
+        <Grid Margin="0,-5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Content="更新数据库" Click="on_update" />
+            <TextBlock Grid.Column="1" x:Name="update_status" FontSize="20" Text="" />
+        </Grid>
+
+    </ui:SimpleStackPanel>
+</Page>

@@ -1,0 +1,35 @@
+﻿<Window x:Class="PetBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        xmlns:local="clr-namespace:PetBook"
+        mc:Ignorable="d"
+        ui:WindowHelper.UseModernWindowStyle="True" ui:TitleBar.ExtendViewIntoTitleBar="True"
+        ResizeMode="NoResize"
+        Title="PetBook" Height="640" Width="1050">
+    <ui:SimpleStackPanel Margin="0" Spacing="0">
+        <ui:NavigationView x:Name="NavView"
+                           IsSettingsVisible="False"
+                           IsPaneOpen="False" IsBackButtonVisible="Collapsed"
+                           PaneDisplayMode="LeftCompact"   
+                           IsPaneToggleButtonVisible="False"
+                           SelectionChanged="onSelectionChanged"
+                           CompactPaneLength="224" Height="638"
+                           VerticalAlignment="Center" HorizontalAlignment="Center" Width="1050"
+                           >
+            <ui:NavigationView.MenuItems>
+                <ui:NavigationViewItem Content="查询精灵" Tag="pet"/>
+                <ui:NavigationViewItem Content="查询技能" Tag="skill"/>
+                <ui:NavigationViewItem Content="查询效果" Tag="effect"/>
+                <ui:NavigationViewItem Content="查询刻印" Tag="mintmark"/>
+            </ui:NavigationView.MenuItems>
+            <ui:NavigationView.FooterMenuItems>
+                <ui:NavigationViewItem Content="关于" Tag="about">
+                </ui:NavigationViewItem>
+            </ui:NavigationView.FooterMenuItems>
+            <ui:Frame x:Name="ContentFrame" Grid.Row="1" IsTabStop="True" Height="600" Width="800"/>
+        </ui:NavigationView>
+    </ui:SimpleStackPanel>
+</Window>

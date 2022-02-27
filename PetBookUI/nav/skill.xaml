@@ -1,0 +1,41 @@
+﻿<Page x:Class="PetBook.nav.SkillPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      xmlns:local="clr-namespace:PetBook"
+      Height="600" Width="800">
+
+    <ui:SimpleStackPanel Spacing="10" Margin="0,0,0,0">
+        <TextBox x:Name="gui_search_str" Height="30" Margin="11,9,529,-9" BorderBrush="Black" BorderThickness="1" >
+
+
+        </TextBox>
+        <ListView x:Name="gui_search_result_list" Width="260" Height="540" Margin="11,8,529,0" 
+                  BorderBrush="Black" BorderThickness="1" VerticalAlignment="Top"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="70" DisplayMemberBinding="{Binding i}" />
+                    <GridViewColumn Header="名称" Width="180" DisplayMemberBinding="{Binding s}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" 
+                      Margin="276,-590,10,10" Height="580">
+            <WrapPanel Orientation="Vertical">
+                <ui:SimpleStackPanel x:Name="detail"  Orientation="Vertical"  Width="490"  HorizontalAlignment="Left" />
+                <ListView x:Name="related_list" Width="470" BorderBrush="Black" FontSize="20" BorderThickness="1" HorizontalAlignment="Center">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" Width="100" DisplayMemberBinding="{Binding i}" />
+                            <GridViewColumn Header="名称" Width="300" DisplayMemberBinding="{Binding s}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </WrapPanel>
+        </ScrollViewer>
+    </ui:SimpleStackPanel>
+</Page>
